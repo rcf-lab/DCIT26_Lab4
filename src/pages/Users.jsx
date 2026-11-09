@@ -14,7 +14,6 @@ function Users() {
         setLoading(true);
         setError("");
 
-        // Retrieve sample user information from DummyJSON
         const response = await axios.get("https://dummyjson.com/users/1");
 
         setUser(response.data);
@@ -43,7 +42,6 @@ function Users() {
           Sample user information retrieved from DummyJSON using Axios.
         </p>
 
-        {/* Loading Indicator */}
         {loading && (
           <div className="bg-white rounded-2xl shadow-sm p-6 text-center">
             <p className="text-gray-600">
@@ -52,7 +50,6 @@ function Users() {
           </div>
         )}
 
-        {/* Error Message */}
         {!loading && error && (
           <div className="bg-white rounded-2xl shadow-sm p-6">
             <p className="font-medium text-red-600">
@@ -68,7 +65,6 @@ function Users() {
           </div>
         )}
 
-        {/* Retrieved User Information */}
         {!loading && user && (
           <div className="bg-white rounded-2xl shadow-sm p-6">
             <div className="flex flex-col items-center text-center">
