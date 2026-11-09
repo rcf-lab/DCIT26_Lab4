@@ -5,11 +5,9 @@ import { persist } from "zustand/middleware";
 const useTodoStore = create(
   persist(
     (set) => ({
-      // Shared task and group data
       tasks: [],
       groups: [],
 
-      // Add a new task
       addTask: (data) =>
         set((state) => ({
           tasks: [
@@ -25,7 +23,6 @@ const useTodoStore = create(
           ],
         })),
 
-      // Update an existing task
       updateTask: (id, data) =>
         set((state) => ({
           tasks: state.tasks.map((task) =>
@@ -41,7 +38,6 @@ const useTodoStore = create(
           ),
         })),
 
-      // Toggle a task between Done and Not Done
       toggleTask: (id) =>
         set((state) => ({
           tasks: state.tasks.map((task) =>
@@ -51,19 +47,16 @@ const useTodoStore = create(
           ),
         })),
 
-      // Delete one task
       deleteTask: (id) =>
         set((state) => ({
           tasks: state.tasks.filter((task) => task.id !== id),
         })),
 
-      // Delete all completed tasks
       clearDoneTasks: () =>
         set((state) => ({
           tasks: state.tasks.filter((task) => !task.done),
         })),
 
-      // Create a new task group
       addGroup: (name) =>
         set((state) => ({
           groups: [
@@ -75,7 +68,6 @@ const useTodoStore = create(
           ],
         })),
 
-      // Delete a group and its associated tasks
       deleteGroup: (id) =>
         set((state) => ({
           groups: state.groups.filter((group) => group.id !== id),
