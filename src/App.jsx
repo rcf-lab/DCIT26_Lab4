@@ -13,11 +13,9 @@ import Users from "./pages/Users.jsx";
 import useTodoStore from "./store/useTodoStore.js";
 
 function App() {
-  // Get shared data from Zustand
   const tasks = useTodoStore((state) => state.tasks);
   const groups = useTodoStore((state) => state.groups);
 
-  // Get task and group functions from Zustand
   const addTask = useTodoStore((state) => state.addTask);
   const updateTask = useTodoStore((state) => state.updateTask);
   const toggleTask = useTodoStore((state) => state.toggleTask);
@@ -31,13 +29,11 @@ function App() {
     <BrowserRouter>
       <div className="min-h-screen bg-[#F2F2F7]">
         <Routes>
-          {/* Home / Dashboard */}
           <Route
             path="/"
             element={<Home tasks={tasks} groups={groups} />}
           />
 
-          {/* All Tasks */}
           <Route
             path="/tasks"
             element={
@@ -53,7 +49,6 @@ function App() {
             }
           />
 
-          {/* Task Groups */}
           <Route
             path="/groups"
             element={
@@ -66,7 +61,6 @@ function App() {
             }
           />
 
-          {/* Tasks inside a selected group */}
           <Route
             path="/groups/:groupId"
             element={
@@ -81,16 +75,12 @@ function App() {
             }
           />
 
-          {/* User Guide */}
           <Route path="/guide" element={<Guide />} />
 
-          {/* User Information */}
           <Route path="/users" element={<Users />} />
 
-          {/* Developers */}
           <Route path="/developers" element={<Developers />} />
 
-          {/* Page Not Found */}
           <Route
             path="*"
             element={
