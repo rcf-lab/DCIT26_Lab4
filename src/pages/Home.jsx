@@ -8,7 +8,6 @@ function Home({ tasks, groups }) {
   const [error, setError] = useState("");
   const [retryCount, setRetryCount] = useState(0);
 
-  // Retrieve sample user information using Axios
   useEffect(() => {
     let isMounted = true;
 
@@ -90,7 +89,6 @@ function Home({ tasks, groups }) {
           Organize your tasks, track your progress, and stay productive.
         </p>
 
-        {/* API User Information */}
         {loading && (
           <div className="bg-white rounded-2xl shadow-sm p-4 mb-6">
             <p className="text-sm text-gray-500">
@@ -136,7 +134,6 @@ function Home({ tasks, groups }) {
           </div>
         )}
 
-        {/* Task Statistics */}
         <div className="grid grid-cols-3 gap-3 mb-3">
           <div className="bg-white rounded-2xl shadow-sm p-4 text-center">
             <p className="text-3xl font-bold text-[#007AFF]">{totalTasks}</p>
@@ -154,7 +151,6 @@ function Home({ tasks, groups }) {
           </div>
         </div>
 
-        {/* Overall Progress */}
         <div className="bg-white rounded-2xl shadow-sm p-4 mb-8">
           <div className="mb-1 flex justify-between text-sm text-gray-500">
             <span>Overall Progress</span>
@@ -169,7 +165,6 @@ function Home({ tasks, groups }) {
           </div>
         </div>
 
-        {/* Upcoming Tasks */}
         <p className="text-sm text-gray-500 uppercase ml-3 mb-2">
           Due Soon
         </p>
@@ -229,7 +224,6 @@ function Home({ tasks, groups }) {
           )}
         </div>
 
-        {/* Task Groups */}
         <p className="text-sm text-gray-500 uppercase ml-3 mb-2">
           Your Task Groups
         </p>
