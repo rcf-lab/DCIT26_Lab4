@@ -25,7 +25,6 @@ function TaskForm({
   onSave,
   onCancelEdit,
 }) {
-  // When editing, start with the existing task information.
   const [title, setTitle] = useState(taskToEdit ? taskToEdit.title : "");
   const [deadline, setDeadline] = useState(
     taskToEdit ? taskToEdit.deadline : ""
@@ -51,7 +50,6 @@ function TaskForm({
       return;
     }
 
-    // Group assignment is optional.
     onSave({
       title: title.trim(),
       deadline: deadline,
