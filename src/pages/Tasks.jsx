@@ -9,8 +9,8 @@ const dropdownStyle =
 const priorityOrder = { High: 0, Medium: 1, Low: 2 };
 
 function Tasks({ tasks, groups, onAddTask, onUpdateTask, onToggle, onDelete, onClearDone }) {
-  const [editingTask, setEditingTask] = useState(null); // the task being edited
-  const [filter, setFilter] = useState("all"); // all, active or done
+  const [editingTask, setEditingTask] = useState(null);
+  const [filter, setFilter] = useState("all");
   const [groupFilter, setGroupFilter] = useState("all");
   const [search, setSearch] = useState("");
   const [sortBy, setSortBy] = useState("deadline");
@@ -99,7 +99,6 @@ function Tasks({ tasks, groups, onAddTask, onUpdateTask, onToggle, onDelete, onC
 
   
   function sortTasks(a, b) {
-    // finished tasks go to the bottom
     if (a.done !== b.done) {
       if (a.done) {
         return 1;
@@ -113,7 +112,6 @@ function Tasks({ tasks, groups, onAddTask, onUpdateTask, onToggle, onDelete, onC
     if (sortBy === "newest") {
       return b.id - a.id;
     }
-    // sort by deadline (nearest first)
     if (a.deadline < b.deadline) return -1;
     if (a.deadline > b.deadline) return 1;
     return 0;
